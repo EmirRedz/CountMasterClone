@@ -2286,6 +2286,7 @@ MonoBehaviour:
   playerNormalSpeed: 10
   playerSlowedSpeed: 2.5
   clampedXLimit: {x: -6, y: 6}
+  footstepTimer: 0.35
   minionPrefab: {fileID: 3496100113670133045, guid: 7789c43204f632e49a8f6dd9ac1aa976,
     type: 3}
   minionCountText: {fileID: 1777371393}
@@ -3577,7 +3578,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56f7c63efe0693e45a93ab9a7d9cad60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundGroups: []
+  soundGroups:
+  - groupName: Death
+    groupClips:
+    - {fileID: 8300000, guid: 1fcfd83e3d859db4585f34930d88477c, type: 3}
+  - groupName: Footsteps
+    groupClips:
+    - {fileID: 8300000, guid: b993df4a93c1d304ab19d8b2eb88c9a5, type: 3}
+    - {fileID: 8300000, guid: 5c9bdbce37b06a24fa6ea793bcfd1907, type: 3}
+    - {fileID: 8300000, guid: 0909de896e9029541b92ae05fe15e4b6, type: 3}
+    - {fileID: 8300000, guid: 6ad0cf00f050bee41a2dee098475dc78, type: 3}
+    - {fileID: 8300000, guid: 7ca5a9710db4327439c9f8cb8204615e, type: 3}
+    - {fileID: 8300000, guid: 14ae706fef2303e4cb71112dbd5d250b, type: 3}
+    - {fileID: 8300000, guid: b995bc1775ea83b4b8f861763e9a1424, type: 3}
+    - {fileID: 8300000, guid: d15f7338d693f0343843a6b9096d27f6, type: 3}
+  - groupName: Gate
+    groupClips:
+    - {fileID: 8300000, guid: cee0ef05d1e443b438eebbc4ee35930c, type: 3}
 --- !u!114 &1699590653
 MonoBehaviour:
   m_ObjectHideFlags: 0

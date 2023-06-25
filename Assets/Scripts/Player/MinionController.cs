@@ -134,6 +134,7 @@ public class MinionController : MonoBehaviour
 
     public void KillMinion()
     {
+        AudioManager.Instance.PlaySound2D("Death");
         var controller = GameManager.Instance.playerController;
         controller.RemoveMinionsFromList(this);
         var deathParticle = LeanPool.Spawn(deathParticlePrefab, transform.position, Random.rotation);

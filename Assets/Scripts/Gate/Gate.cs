@@ -74,6 +74,7 @@ public class Gate : MonoBehaviour
         }
 
         //transform.DOPunchScale(Vector3.one * 0.75f, 0.25f);
+        AudioManager.Instance.PlaySound2D("Gate");
         controller.transform.DOPunchScale(Vector3.one * 0.25f, 0.25f);
         gameObject.SetActive(false);
 

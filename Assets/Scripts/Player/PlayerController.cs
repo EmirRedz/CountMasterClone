@@ -17,7 +17,9 @@ public class PlayerController : MonoBehaviour
     private float playerForwardSpeed;
 
     [SerializeField] private Vector2 clampedXLimit;
-    
+
+    [SerializeField] private float footstepTimer;
+    private float lastFootstep;
     [Header("Minions")]
     [SerializeField] private MinionController minionPrefab;
     [SerializeField] private TMP_Text minionCountText;
@@ -58,6 +60,16 @@ public class PlayerController : MonoBehaviour
         var pos = transform.position;
         pos.x = Mathf.Clamp(pos.x, clampedXLimit.x, clampedXLimit.y);
         transform.position = pos;
+
+        if (lastFootstep <= 0 && controller.velocity.magnitude > 0)
+        {
+            AudioManager.Instance.PlaySound2D("Footsteps");
+            lastFootstep = footstepTimer;
+        }
+        else
+        {
+            lastFootstep -= Time.deltaTime;
+        }
     }
 
     public void SpawnMinion()
