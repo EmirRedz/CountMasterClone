@@ -80,6 +80,7 @@ public class GameManager : MonoBehaviour
     public void FailLevel()
     {
         UIManager.Instance.ShowEnding(false,0);
+        AudioManager.Instance.PlaySound2D("LoseSound");
         isFinished = true;
     }
 
@@ -93,6 +94,7 @@ public class GameManager : MonoBehaviour
         var rewardAmount = Mathf.RoundToInt(levels[currentLevel].rewardAmount * currentBonusFactor * incomeFactor);
         
         UIManager.Instance.ShowEnding(true,rewardAmount);
+        AudioManager.Instance.PlaySound2D("WinSound");
         IncreaseMoney(rewardAmount);
     }
     public void LoadScene(string sceneToLoad)

@@ -136,7 +136,6 @@ public class MinionController : MonoBehaviour
     {
         AudioManager.Instance.PlaySound2D("Death");
         var controller = GameManager.Instance.playerController;
-        controller.RemoveMinionsFromList(this);
         var deathParticle = LeanPool.Spawn(deathParticlePrefab, transform.position, Random.rotation);
        
         var decalPos = new Vector3(transform.position.x, transform.position.y - 0.9f, transform.position.z);
@@ -152,6 +151,9 @@ public class MinionController : MonoBehaviour
         
         LeanPool.Despawn(deathParticle, 1f);
         LeanPool.Despawn(gameObject,0.03f);
+        
+        controller.RemoveMinionsFromList(this);
+
     }
 
     public bool IsFinishedStair()

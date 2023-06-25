@@ -3594,7 +3594,13 @@ MonoBehaviour:
     - {fileID: 8300000, guid: d15f7338d693f0343843a6b9096d27f6, type: 3}
   - groupName: Gate
     groupClips:
-    - {fileID: 8300000, guid: cee0ef05d1e443b438eebbc4ee35930c, type: 3}
+    - {fileID: 8300000, guid: f9161582126b2034d8dbcbc0ad2a1dc4, type: 3}
+  - groupName: WinSound
+    groupClips:
+    - {fileID: 8300000, guid: a13123a141deed7439334029890496ab, type: 3}
+  - groupName: LoseSound
+    groupClips:
+    - {fileID: 8300000, guid: 63af92c30e5d6d644a6bbd882d56c6b8, type: 3}
 --- !u!114 &1699590653
 MonoBehaviour:
   m_ObjectHideFlags: 0

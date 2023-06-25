@@ -58,9 +58,26 @@ public class Gate : MonoBehaviour
                 }
                 break;
             case GateType.Subtract:
-                for (int i = 0; i < value; i++)
+                int valueActual = value >= controller.MyMinions().Count ? controller.MyMinions().Count : value;
+                // for (int i = 0; i < valueActual; i++)
+                // {
+                //     var minion = controller.MyMinions()[i];
+                //     Debug.Log("Index: " + i);
+                //     if (minion != null)
+                //     {
+                //         minion.KillMinion();
+                //     }
+                // }
+
+                Debug.Log(valueActual);
+                for (int i = valueActual - 1; i >= 0; i--)
                 {
-                    controller.MyMinions()[i].KillMinion();
+                    var minion = controller.MyMinions()[i];
+                    Debug.Log("Index: " + i);
+                    if (minion != null)
+                    {
+                        minion.KillMinion();
+                    }
                 }
                 break;
             case GateType.Multiply:
