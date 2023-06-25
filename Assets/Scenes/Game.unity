@@ -3720,8 +3720,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerController: {fileID: 1198918364}
   levels:
-  - {fileID: 11400000, guid: 124fa85f1fd36944480ae07aaf3a14dc, type: 2}
   - {fileID: 11400000, guid: 865c914d58e96bf47a80d60d191624fb, type: 2}
+  - {fileID: 11400000, guid: 124fa85f1fd36944480ae07aaf3a14dc, type: 2}
+  - {fileID: 11400000, guid: 9cd1e07ab7fd24b4c914773c2b35136e, type: 2}
   startingPointValue: 5
   pointValueToIncrement: 0.2
   currentBonusFactor: 1
