@@ -11,9 +11,11 @@ public class Gate : MonoBehaviour
     [SerializeField] private GateType type;
     [SerializeField] private int value;
     private bool isGateTriggered;
+    
     [Header("Gate Visuals")] 
     [SerializeField] private GameObject goodParticle;
     [SerializeField] private GameObject badParticle;
+    [SerializeField] private GameObject poleToDeactivate;
     [SerializeField] private TMP_Text gateText;
     
 
@@ -39,6 +41,10 @@ public class Gate : MonoBehaviour
                 goodParticle.SetActive(true);
                 badParticle.SetActive(false);
                 gateText.SetText("X" + value);
+                break;
+            case GateType.None:
+                gameObject.SetActive(false);
+                poleToDeactivate.SetActive(false);
                 break;
         }
     }
@@ -92,7 +98,10 @@ public class Gate : MonoBehaviour
 
         //transform.DOPunchScale(Vector3.one * 0.75f, 0.25f);
         AudioManager.Instance.PlaySound2D("Gate");
-        controller.transform.DOPunchScale(Vector3.one * 0.25f, 0.25f);
+        foreach (MinionController minion in controller.MyMinions())
+        {
+            minion.transform.DOPunchScale(Vector3.one * 0.25f, 0.25f);
+        }
         gameObject.SetActive(false);
 
         isGateTriggered = true;
@@ -104,5 +113,6 @@ public class Gate : MonoBehaviour
         Add,
         Subtract,
         Multiply,
+        None
     }
 }

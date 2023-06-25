@@ -631,6 +631,7 @@ MonoBehaviour:
   rewardAmountGO: {fileID: 2033593778}
   rewardAmountText: {fileID: 887952339}
   progressFill: {fileID: 534445783}
+  currentLevelText: {fileID: 2001345782}
   moneyText: {fileID: 1373247936}
   minionBuyButton: {fileID: 532162934}
   levelText: {fileID: 1116957711165340669}
@@ -3719,6 +3720,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerController: {fileID: 1198918364}
   levels:
+  - {fileID: 11400000, guid: 124fa85f1fd36944480ae07aaf3a14dc, type: 2}
   - {fileID: 11400000, guid: 865c914d58e96bf47a80d60d191624fb, type: 2}
   startingPointValue: 5
   pointValueToIncrement: 0.2

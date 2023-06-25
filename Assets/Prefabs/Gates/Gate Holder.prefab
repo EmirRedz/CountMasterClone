@@ -621,6 +621,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2078236287174772930}
     m_Modifications:
+    - target: {fileID: 3949873250360472585, guid: 28dbdd3ec23f0e7438a3b5c2aa9730a2,
+        type: 3}
+      propertyPath: poleToDeactivate
+      value: 
+      objectReference: {fileID: 2078236286327852222}
     - target: {fileID: 6862493850127804122, guid: 28dbdd3ec23f0e7438a3b5c2aa9730a2,
         type: 3}
       propertyPath: m_RootOrder
@@ -681,6 +686,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gate Left
       objectReference: {fileID: 0}
+    - target: {fileID: 6862493850127804123, guid: 28dbdd3ec23f0e7438a3b5c2aa9730a2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28dbdd3ec23f0e7438a3b5c2aa9730a2, type: 3}
 --- !u!4 &4894033081377998001 stripped
@@ -696,6 +706,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2078236287174772930}
     m_Modifications:
+    - target: {fileID: 3949873250360472585, guid: 28dbdd3ec23f0e7438a3b5c2aa9730a2,
+        type: 3}
+      propertyPath: poleToDeactivate
+      value: 
+      objectReference: {fileID: 2078236285943523978}
     - target: {fileID: 6862493850127804122, guid: 28dbdd3ec23f0e7438a3b5c2aa9730a2,
         type: 3}
       propertyPath: m_RootOrder

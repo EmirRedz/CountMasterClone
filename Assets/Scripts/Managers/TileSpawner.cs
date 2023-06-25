@@ -10,24 +10,23 @@ public class TileSpawner : MonoBehaviour
     private float zPosition;
     [SerializeField] private float tileLength;
 
-    private void Awake()
+    private void Start()
     {
-        int currentLevelIndex = 0;
         int currentGateDataIndex = 0;
         int currentEnemyGateIndex = 0;
-        for (int i = 0; i < GameManager.Instance.levels[0].tilesToSpawn.Count; i++)
+        for (int i = 0; i < GameManager.Instance.GetCurrentLevelData().tilesToSpawn.Count; i++)
         {
-            var tile = SpawnTile(GameManager.Instance.levels[0].tilesToSpawn[i]);
+            var tile = SpawnTile(GameManager.Instance.GetCurrentLevelData().tilesToSpawn[i]);
 
             if (tile.CompareTag("GateTile"))
             {
-                tile.GetComponentInChildren<GateHolder>().InitGates(GameManager.Instance.levels[currentLevelIndex].GateDatasContainers[currentGateDataIndex].gateDatas);
+                tile.GetComponentInChildren<GateHolder>().InitGates(GameManager.Instance.GetCurrentLevelData().GateDatasContainers[currentGateDataIndex].gateDatas);
                 currentGateDataIndex++;
             }
 
             if (tile.CompareTag("EnemyTile"))
             {
-                tile.GetComponentInChildren<EnemySpawner>().Init(GameManager.Instance.levels[currentLevelIndex].enemyAmounts[currentEnemyGateIndex]);
+                tile.GetComponentInChildren<EnemySpawner>().Init(GameManager.Instance.GetCurrentLevelData().enemyAmounts[currentEnemyGateIndex]);
                 currentEnemyGateIndex++;
             }
 
@@ -35,8 +34,8 @@ public class TileSpawner : MonoBehaviour
             {
                 var finishManager = tile.GetComponentInChildren<FinishManager>();
                 GameManager.Instance.SetFinishLine(finishManager);
-                finishManager.SetUp(GameManager.Instance.levels[currentLevelIndex].finishType, 
-                    GameManager.Instance.levels[currentLevelIndex].amountOfStairsToSpawn);
+                finishManager.SetUp(GameManager.Instance.GetCurrentLevelData().finishType, 
+                    GameManager.Instance.GetCurrentLevelData().amountOfStairsToSpawn);
             }
         }
         

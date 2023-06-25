@@ -14,12 +14,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private EnemyController enemyPrefab;
     [SerializeField] [Range(0,1)] private float angle, radius;
     [SerializeField] private TMP_Text amountText;
-
-    private void Start()
-    {
-        Init(10);
-    }
-
+    
     public void Init(int amount)
     {
         for (int i = 0; i < amount; i++)
@@ -78,9 +73,13 @@ public class EnemySpawner : MonoBehaviour
         playerMinionsInArea.Remove(minionToRemove);
     }
     
-    private void AddEnemyToList(EnemyController  minionToAdd)
+    private void AddEnemyToList(EnemyController  enemyToAdd)
     {
-        myEnemies.Add(minionToAdd);
+        if (myEnemies.Contains(enemyToAdd))
+        {
+            return;
+        }
+        myEnemies.Add(enemyToAdd);
         amountText.SetText(myEnemies.Count.ToString());
     }
     

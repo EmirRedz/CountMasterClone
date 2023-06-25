@@ -20,6 +20,9 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private float footstepTimer;
     private float lastFootstep;
+
+    private bool hitFinishLine;
+    
     [Header("Minions")]
     [SerializeField] private MinionController minionPrefab;
     [SerializeField] private TMP_Text minionCountText;
@@ -43,7 +46,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (GameManager.Instance.isFinished)
+        if (hitFinishLine || GameManager.Instance.isFinished)
         {
             return;
         }
@@ -75,6 +78,7 @@ public class PlayerController : MonoBehaviour
     public void SpawnMinion()
     {
         var minion = LeanPool.Spawn(minionPrefab, transform.position, Quaternion.identity, transform);
+        minion.GetAnimator().speed = 1;
         AddMinionsToList(minion);
         
         int currentMinionIndex = Minions.IndexOf(minion);
@@ -280,7 +284,7 @@ public class PlayerController : MonoBehaviour
         {
             other.GetComponent<FinishManager>().TriggerFinish(this);
             minionCountText.gameObject.SetActive(false);
-            GameManager.Instance.WinLevel();
+            hitFinishLine = true;
         }
     }
 

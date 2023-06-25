@@ -66,6 +66,10 @@ public class GameManager : MonoBehaviour
         currentIncomeFactorLevel = PlayerPrefs.GetInt(PlayerPrefManager.CURRENT_INCOME_FACTOR_LEVEL, 1);
         
         moneyAmount = PlayerPrefs.GetInt(PlayerPrefManager.MONEY_AMOUNT, 100);
+
+        currentLevel = PlayerPrefs.GetInt(PlayerPrefManager.CURRENT_LEVEL, 0);
+        
+        UIManager.Instance.SetCurrentLevelText(currentLevel + 1);
         
         UIManager.Instance.SetBuyMinionButtonUI(startingMinionAmount, startingMinionCost);
         UIManager.Instance.CheckMinionBuyButton(startingMinionCost, moneyAmount);
@@ -83,19 +87,30 @@ public class GameManager : MonoBehaviour
         AudioManager.Instance.PlaySound2D("LoseSound");
         isFinished = true;
     }
-
-    public void WinLevel()
-    {
-        isFinished = true;
-    }
+    
 
     public void ShowWinScreen()
     {
+        if (isFinished)
+        {
+            return;
+        }
         var rewardAmount = Mathf.RoundToInt(levels[currentLevel].rewardAmount * currentBonusFactor * incomeFactor);
+        isFinished = true;
+        
+        
         
         UIManager.Instance.ShowEnding(true,rewardAmount);
         AudioManager.Instance.PlaySound2D("WinSound");
         IncreaseMoney(rewardAmount);
+        
+        currentLevel++;
+        if (currentLevel >  levels.Length - 1)
+        {
+            currentLevel = 0;
+        }
+        PlayerPrefs.SetInt(PlayerPrefManager.CURRENT_LEVEL, currentLevel);
+        PlayerPrefs.Save();
     }
     public void LoadScene(string sceneToLoad)
     {

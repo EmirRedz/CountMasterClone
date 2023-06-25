@@ -18,7 +18,8 @@ public class UIManager : MonoBehaviour
 
     [Header("UI Progress Bar")] 
     [SerializeField] private Image progressFill;
-
+    [SerializeField] private TMP_Text currentLevelText;
+    
     [Header("Money")] 
     [SerializeField] private TMP_Text moneyText;
     
@@ -91,6 +92,11 @@ public class UIManager : MonoBehaviour
         {
             incomeFactorBuyButton.interactable = false;
         }
+    }
+
+    public void SetCurrentLevelText(int level)
+    {
+        currentLevelText.SetText("Level " + level);
     }
 
 
