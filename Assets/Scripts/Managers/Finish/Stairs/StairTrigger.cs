@@ -12,13 +12,19 @@ public class StairTrigger : MonoBehaviour
     [SerializeField] private GameObject goldGO;
 
     [SerializeField] private Transform[] confettiSpawnPoints;
+
+    private bool isStairSoundPlayed;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Minion"))
         {
             other.GetComponent<MinionController>().FinishStair();
             GameManager.Instance.currentBonusFactor = myStair.myPointValue;
-
+            if (!isStairSoundPlayed)
+            {
+                AudioManager.Instance.PlaySound2D("Gate");
+                isStairSoundPlayed = true;
+            }
             if (GameManager.Instance.playerController.AreAllMinionsFinished())
             {
                 if (isLastStair)

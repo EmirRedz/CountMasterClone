@@ -186,7 +186,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 95150146}
   m_LocalRotation: {x: 0.2164396, y: 0, z: 0, w: 0.97629607}
-  m_LocalPosition: {x: 0, y: 6, z: -10}
+  m_LocalPosition: {x: 0, y: 11, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2415,7 +2415,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1282752364}
   m_LocalRotation: {x: 0.2164396, y: 0, z: 0, w: 0.97629607}
-  m_LocalPosition: {x: 0, y: 6, z: -10}
+  m_LocalPosition: {x: 0, y: 11, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3607,6 +3607,9 @@ MonoBehaviour:
   - groupName: FinishSound
     groupClips:
     - {fileID: 8300000, guid: 68200acbac8f92141987986cf7acd3ea, type: 3}
+  - groupName: PurchaseSound
+    groupClips:
+    - {fileID: 8300000, guid: 808b1c1bb474b2e4e81f482b61c5af1f, type: 3}
 --- !u!114 &1699590653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3811,6 +3814,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 865c914d58e96bf47a80d60d191624fb, type: 2}
   - {fileID: 11400000, guid: 124fa85f1fd36944480ae07aaf3a14dc, type: 2}
   - {fileID: 11400000, guid: 9cd1e07ab7fd24b4c914773c2b35136e, type: 2}
+  - {fileID: 11400000, guid: 1018f6c127bf8a743b69cf40597ae781, type: 2}
+  - {fileID: 11400000, guid: 44b8937be9d16284088f5ed30980a19e, type: 2}
   startingPointValue: 5
   pointValueToIncrement: 0.2
   currentBonusFactor: 1
@@ -3824,7 +3829,7 @@ MonoBehaviour:
   startingMinionCost: 100
   incomeFactor: 1
   incomeFactorCost: 0
-  chanceToSpawnPowerUpPerTile: 0.5
+  chanceToSpawnPowerUpPerTile: 2.5
 --- !u!4 &1772650390
 Transform:
   m_ObjectHideFlags: 0
@@ -4361,7 +4366,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 5, z: -10}
+  m_FollowOffset: {x: 0, y: 10, z: -20}
   m_XDamping: 2
   m_YDamping: 0.25
   m_ZDamping: 0.25

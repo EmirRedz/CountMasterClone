@@ -15,8 +15,10 @@ public class LevelDataSO : ScriptableObject
     
     [Header("Finish")]
     public FinishManager.FinishType finishType;
-    
     public int rewardAmount;
+    public int losingAmount;
+    
+    [Space]
     public int amountOfStairsToSpawn;
     
     [Space]

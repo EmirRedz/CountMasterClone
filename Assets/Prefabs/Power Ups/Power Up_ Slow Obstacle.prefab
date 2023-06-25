@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 8416166393353562672}
   - component: {fileID: 8416166393353562671}
   - component: {fileID: 8416166393353562670}
-  - component: {fileID: 8416166393353562675}
+  - component: {fileID: 7627017864851993437}
   m_Layer: 0
   m_Name: Power Up_ Slow Obstacle
   m_TagString: PowerUp
@@ -162,7 +162,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &8416166393353562670
 Animator:
@@ -184,7 +184,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &8416166393353562675
+--- !u!114 &7627017864851993437
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -193,10 +193,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8416166393353562674}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d24dadd608b46834e91547560a12820e, type: 3}
+  m_Script: {fileID: 11500000, guid: 613feae7d3e0adb449e80bf62aa5457d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shieldDuration: 3
+  slowDuration: 3
 --- !u!1001 &6474976997004800384
 PrefabInstance:
   m_ObjectHideFlags: 0

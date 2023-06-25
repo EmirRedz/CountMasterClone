@@ -98,7 +98,8 @@ public class GameManager : MonoBehaviour
 
     public void FailLevel()
     {
-        UIManager.Instance.ShowEnding(false,0);
+        UIManager.Instance.ShowEnding(false,GetCurrentLevelData().losingAmount);
+        IncreaseMoney(GetCurrentLevelData().losingAmount);
         AudioManager.Instance.PlaySound2D("LoseSound");
         isFinished = true;
     }
@@ -110,7 +111,7 @@ public class GameManager : MonoBehaviour
         {
             return;
         }
-        var rewardAmount = Mathf.RoundToInt(levels[currentLevel].rewardAmount * currentBonusFactor * incomeFactor);
+        var rewardAmount = Mathf.RoundToInt(GetCurrentLevelData().rewardAmount * currentBonusFactor * incomeFactor);
         isFinished = true;
         
         
@@ -175,6 +176,8 @@ public class GameManager : MonoBehaviour
     }
     public void UpgradeStartingMinionLevel()
     {
+        AudioManager.Instance.PlaySound2D("PurchaseSound");
+
         SpendMoney(startingMinionCost);
         
         startingMinionAmount++;
@@ -194,6 +197,8 @@ public class GameManager : MonoBehaviour
 
     public void UpgradeIncomeFactor()
     {
+        AudioManager.Instance.PlaySound2D("PurchaseSound");
+        
         SpendMoney(incomeFactorCost);
         
         incomeFactor += incomeFactor * 0.2f;

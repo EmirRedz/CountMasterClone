@@ -83,6 +83,7 @@ public class PlayerController : MonoBehaviour
     {
         var minion = LeanPool.Spawn(minionPrefab, transform.position, Quaternion.identity, transform);
         minion.GetAnimator().speed = 1;
+        minion.transform.DOPunchScale(minion.transform.localScale * 0.25f, 0.35f);
         AddMinionsToList(minion);
         
         int currentMinionIndex = Minions.IndexOf(minion);

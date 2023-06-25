@@ -42,6 +42,7 @@ MonoBehaviour:
   enemyAmounts: 1e000000
   finishType: 1
   rewardAmount: 65
+  losingAmount: 30
   amountOfStairsToSpawn: 0
   bossToSpawn: {fileID: -4559555149779666478, guid: 2a8fe449a30a93e40b13ed3707a6901b,
     type: 3}

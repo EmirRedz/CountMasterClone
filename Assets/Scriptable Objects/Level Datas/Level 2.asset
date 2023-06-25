@@ -40,6 +40,7 @@ MonoBehaviour:
   enemyAmounts: 140000000f000000
   finishType: 0
   rewardAmount: 30
+  losingAmount: 15
   amountOfStairsToSpawn: 8
   bossToSpawn: {fileID: 0}
   bossHealth: 0
