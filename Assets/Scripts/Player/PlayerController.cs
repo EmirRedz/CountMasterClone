@@ -244,6 +244,16 @@ public class PlayerController : MonoBehaviour
         return Minions;
     }
 
+    public float NormalSpeed()
+    {
+        return playerNormalSpeed;
+    }
+
+    public void SetPlayerSpeed(float speed)
+    {
+        playerForwardSpeed = speed;
+    }
+
     public void SetPlayerSpeed(bool isSlowed)
     {
         playerForwardSpeed = isSlowed ? playerSlowedSpeed : playerNormalSpeed;
@@ -275,11 +285,15 @@ public class PlayerController : MonoBehaviour
             other.GetComponent<Gate>().TriggerGate(this);
         }
 
+        if (other.CompareTag("PowerUp"))
+        {
+            other.GetComponent<IPickupable>().PickUp(this);
+        }
         if (other.CompareTag("EnemyTile"))
         {
             SetPlayerSpeed(true);
         }
-
+        
         if (other.CompareTag("FinishLine"))
         {
             other.GetComponent<FinishManager>().TriggerFinish(this);

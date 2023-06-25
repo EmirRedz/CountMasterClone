@@ -12,6 +12,7 @@ TagManager:
   - FinishLine
   - FinishTile
   - Boss
+  - PowerUp
   layers:
   - Default
   - TransparentFX

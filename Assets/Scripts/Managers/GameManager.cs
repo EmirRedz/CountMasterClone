@@ -40,6 +40,9 @@ public class GameManager : MonoBehaviour
     public float incomeFactor = 1;
     public int incomeFactorCost;
     private int currentIncomeFactorLevel = 1;
+
+    [Header("Power Up")]
+    public float chanceToSpawnPowerUpPerTile;
     private void Awake()
     {
         Instance = this;
