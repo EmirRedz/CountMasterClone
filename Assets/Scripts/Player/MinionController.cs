@@ -134,6 +134,10 @@ public class MinionController : MonoBehaviour
 
     public void KillMinion()
     {
+        if (GameManager.Instance.playerController.GetIsProtected())
+        {
+            return;
+        }
         AudioManager.Instance.PlaySound2D("Death");
         var controller = GameManager.Instance.playerController;
         var deathParticle = LeanPool.Spawn(deathParticlePrefab, transform.position, Random.rotation);

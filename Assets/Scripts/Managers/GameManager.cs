@@ -43,6 +43,8 @@ public class GameManager : MonoBehaviour
 
     [Header("Power Up")]
     public float chanceToSpawnPowerUpPerTile;
+
+    private List<Animator> obstalceAnimators = new List<Animator>();
     private void Awake()
     {
         Instance = this;
@@ -52,6 +54,16 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         SetPrefs();
+    }
+
+    private void OnEnable()
+    {
+        ObstacleTag.RegisterObstacleAnimator += OnRegisterObstacleAnimators;
+    }
+
+    private void OnDisable()
+    {
+        ObstacleTag.RegisterObstacleAnimator -= OnRegisterObstacleAnimators;
     }
 
     private void Update()
@@ -199,6 +211,23 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.Save();
     }
 
+    public void SetObstacleAnimatorSpeed(float speed)
+    {
+        foreach (Animator obstacleAnimator in obstalceAnimators)
+        {
+            obstacleAnimator.speed = speed;
+        }
+    }
+    
+    private void OnRegisterObstacleAnimators(Animator obstacleAnimator)
+    {
+        if (obstalceAnimators.Contains(obstacleAnimator))
+        {
+            return;
+        }
+
+        obstalceAnimators.Add(obstacleAnimator);
+    }
     public LevelDataSO GetCurrentLevelData()
     {
         return levels[currentLevel];

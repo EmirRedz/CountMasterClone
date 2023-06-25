@@ -34,6 +34,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float stackingSpace;
     [SerializeField] private float minionHeight;
 
+    [Header("Protection Shield")] 
+    [SerializeField] private Transform protectionShield;
+    private bool isProtected;
+    
     private void Start()
     {
         for (int i = 0; i < GameManager.Instance.startingMinionAmount; i++)
@@ -265,6 +269,26 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void SetProtection(bool toggle)
+    {
+        isProtected = toggle;
+
+        Vector3 targetScale = toggle ? Vector3.one * 16f : Vector3.zero;
+        float scaleSpeed = toggle ? 0.2f : 0.15f;
+
+        protectionShield.DOScale(targetScale, scaleSpeed).SetEase(Ease.Flash);
+    }
+
+    public void SetObstacleSpeed(float speed)
+    {
+        GameManager.Instance.SetObstacleAnimatorSpeed(speed);
+    }
+
+    public bool GetIsProtected()
+    {
+        return isProtected;
+    }
+
     public bool AreAllMinionsFinished()
     {
         foreach (MinionController minion in Minions)
@@ -297,6 +321,7 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("FinishLine"))
         {
             other.GetComponent<FinishManager>().TriggerFinish(this);
+            AudioManager.Instance.PlaySound2D("FinishSound");
             minionCountText.gameObject.SetActive(false);
             hitFinishLine = true;
         }

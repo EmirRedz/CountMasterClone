@@ -5,10 +5,4 @@ using UnityEngine;
 public interface IPickupable
 {
     public void PickUp(PlayerController controller);
-    public enum PickUpType
-    {
-        SpeedBoost,
-        SlowDownTime,
-        Shield
-    }
 }

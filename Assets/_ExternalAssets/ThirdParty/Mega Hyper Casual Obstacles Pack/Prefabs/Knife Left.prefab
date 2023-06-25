@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 3396728008633227014}
   - component: {fileID: 3396728008633227015}
   - component: {fileID: 1151273530}
+  - component: {fileID: 6155793048591949175}
   m_Layer: 0
   m_Name: Knife Left
   m_TagString: Untagged
@@ -102,6 +103,18 @@ MonoBehaviour:
   slamEffectPrefab: {fileID: 8011693403292705541, guid: c613625f2a5320d439e924422df65117,
     type: 3}
   slamEffectSpawnPoint: {fileID: 1497420027}
+--- !u!114 &6155793048591949175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3396728008633227012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e96ded12437593744bb5c7d6a683dd9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3410504313425593315
 GameObject:
   m_ObjectHideFlags: 0

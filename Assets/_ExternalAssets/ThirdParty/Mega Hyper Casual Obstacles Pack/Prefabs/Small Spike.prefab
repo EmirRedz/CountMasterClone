@@ -121,6 +121,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4756934915472268635}
   - component: {fileID: 2394848352938734049}
+  - component: {fileID: 443080546364049520}
   m_Layer: 0
   m_Name: Small Spike
   m_TagString: Untagged
@@ -165,6 +166,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &443080546364049520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5282678067478710241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e96ded12437593744bb5c7d6a683dd9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5451214911564754718
 GameObject:
   m_ObjectHideFlags: 0
